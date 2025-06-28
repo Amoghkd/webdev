@@ -53,10 +53,13 @@ export default function LoveNotes() {
   const [currentMessage, setCurrentMessage] = useState("");
 
   const startMissYouFlow = () => {
+    console.log('Button clicked!'); // Debug log
     const randomQuestion = missYouQuestions[Math.floor(Math.random() * missYouQuestions.length)];
+    console.log('Selected question:', randomQuestion); // Debug log
     setCurrentQuestion(randomQuestion);
     setCurrentStep('question');
     setIsModalOpen(true);
+    console.log('Modal should be open now'); // Debug log
   };
 
   const handleOptionSelect = (optionIndex: number) => {
@@ -105,7 +108,12 @@ export default function LoveNotes() {
                 </DialogDescription>
               </DialogHeader>
 
-              {currentStep === 'question' && currentQuestion && (
+              {/* Debug info */}
+              <div className="text-sm text-gray-500 mb-4">
+                Debug: Step={currentStep}, HasQuestion={!!currentQuestion}, IsOpen={isModalOpen}
+              </div>
+
+              {currentStep === 'question' && currentQuestion ? (
                 <div>
                   <div className="text-4xl mb-6">💭</div>
                   <h3 className="text-lg font-semibold text-gray-800 mb-8">
@@ -123,9 +131,7 @@ export default function LoveNotes() {
                     ))}
                   </div>
                 </div>
-              )}
-
-              {currentStep === 'message' && (
+              ) : currentStep === 'message' ? (
                 <div>
                   <div className="text-6xl mb-4">💌</div>
                   <p className="text-lg text-gray-700 leading-relaxed gothic-text font-semibold mb-8">
@@ -138,6 +144,12 @@ export default function LoveNotes() {
                   >
                     Get Another Message 💫
                   </Button>
+                </div>
+              ) : (
+                <div>
+                  <div className="text-4xl mb-4">❌</div>
+                  <p>Something went wrong. Let me fix this...</p>
+                  <Button onClick={() => setIsModalOpen(false)}>Close</Button>
                 </div>
               )}
             </div>
