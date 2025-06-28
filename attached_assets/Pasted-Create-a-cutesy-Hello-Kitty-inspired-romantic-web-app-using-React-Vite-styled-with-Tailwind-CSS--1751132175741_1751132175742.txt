@@ -1,0 +1,85 @@
+Create a cutesy Hello Kitty-inspired romantic web app using React + Vite, styled with Tailwind CSS. This is a gift for our 9-month anniversary, to be deployed as a PWA, installable on iOS Safari, and hosted on Netlify.
+
+🛠️ Stack:
+- React + Vite
+- Tailwind CSS for styling
+- PWA support with `manifest.json`
+- Host on Netlify
+- Use localStorage + Netlify Forms for message saving
+
+---
+
+🎨 Theme:
+- Visual: Soft pinks, whites, hearts, glitter — "Kawaii aesthetic"
+- Use Hello Kitty SVGs/Lotties (can be public URLs or embedded)
+- Add touches of contrast using black/purple gradients, and metal/gothic fonts in specific sections (love notes, secret message)
+- Responsive, mobile-first design
+
+---
+
+📱 Components / Screens:
+
+1. **Welcome Screen**
+   - Animated background (Lottie or CSS sparkles)
+   - Centered greeting: “Hi [Her Name] 💖 Happy 9 Months!”
+   - Button: “Start Our Journey” scrolls down
+   - Add cute Hello Kitty image/gif
+
+2. **Memory Timeline**
+   - Scrollable vertical list
+   - Each memory has:
+     - A photo (placeholder initially)
+     - Title + description (in cutesy font)
+     - Animated entrance (fade/slide-in)
+   - JSON-based memory data for easy updates
+
+3. **Love Notes Generator**
+   - Button: “Tap here when you miss me 💌”
+   - On click:
+     - Shows random love note from a list
+     - Styled like a heart-shaped popup
+     - Use slightly edgier font (gothic/metal font for effect)
+
+4. **Day Counter**
+   - Calculate:
+     - Days since couple start date
+     - Countdown to 1-year anniversary
+   - Display in a cute box with hearts or Hello Kitty around it
+
+5. **Secret Easter Egg**
+   - Hidden Hello Kitty icon somewhere on the page
+   - On click:
+     - Reveal hidden memory or quote
+     - Show glitter animation or Lottie burst
+
+6. **Shared Message Input**
+   - Header: “Write me a note whenever you want 💬”
+   - Large text box
+   - Buttons:
+     - 💾 Save locally to `localStorage`
+     - 📩 Submit to me via Netlify Forms
+   - Behavior:
+     - Show "Note saved!" toast on save
+     - Show "Sent!" on Netlify form submission
+   - Form HTML should include:
+     ```html
+     <form name="love-note" method="POST" data-netlify="true">
+       <textarea name="note" required></textarea>
+       <button type="submit">Send Note 💌</button>
+     </form>
+     ```
+   - Add a hidden input: `<input type="hidden" name="form-name" value="love-note">`
+
+---
+
+🔧 PWA & Hosting:
+- Add `manifest.json` in `public/` with:
+  - name, short_name, start_url, theme_color, icons
+- Add meta tags in `index.html` for iOS Safari:
+  - `apple-mobile-web-app-capable`, `apple-mobile-web-app-title`, etc.
+- Test that app can be “Add to Home Screen” from Safari
+- Deploy final version on Netlify
+
+---
+
+📦 File Structure:
