@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Poppins:wght@300;400;600;700&family=Cinzel:wght@400;600&display=swap');
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Kawaii Color Palette */
+  --kawaii-pink: hsl(351, 100%, 86%);
+  --kawaii-light: hsl(350, 100%, 88%);
+  --kawaii-cream: hsl(50, 100%, 96%);
+  --kawaii-rose: hsl(353, 45%, 80%);
+  --kawaii-coral: hsl(0, 100%, 75%);
+  --gothic-purple: hsl(294, 83%, 18%);
+  --gothic-dark: hsl(0, 0%, 18%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .kawaii-gradient {
+    background: linear-gradient(135deg, hsl(351, 100%, 86%), hsl(350, 100%, 88%), hsl(50, 100%, 96%));
+  }
+  
+  .gradient-text {
+    background: linear-gradient(45deg, hsl(332, 79%, 58%), hsl(351, 100%, 86%), hsl(332, 85%, 45%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .gothic-text {
+    font-family: 'Cinzel', serif;
+    background: linear-gradient(45deg, hsl(294, 83%, 18%), hsl(0, 0%, 18%), hsl(289, 76%, 28%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .hello-kitty-cursor {
+    cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiNGRkI2QzEiLz4KPGNpcmNsZSBjeD0iOSIgY3k9IjEwIiByPSIxLjUiIGZpbGw9IiMwMDAiLz4KPGNpcmNsZSBjeD0iMTUiIGN5PSIxMCIgcj0iMS41IiBmaWxsPSIjMDAwIi8+CjxwYXRoIGQ9Ik04IDE0IFExMiAxNyAxNiAxNCIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPC9zdmc+'), auto;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-sparkle {
+    animation: sparkle 2s linear infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 20px;
+  color: rgba(255, 182, 193, 0.7);
+  animation: float-up 4s linear infinite;
+  pointer-events: none;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, #FFD700, #FFF);
+  border-radius: 50%;
+  animation: sparkle 2s linear infinite;
+  pointer-events: none;
+}
