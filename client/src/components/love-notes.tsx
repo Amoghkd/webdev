@@ -53,13 +53,10 @@ export default function LoveNotes() {
   const [currentMessage, setCurrentMessage] = useState("");
 
   const startMissYouFlow = () => {
-    console.log('Button clicked!'); // Debug log
     const randomQuestion = missYouQuestions[Math.floor(Math.random() * missYouQuestions.length)];
-    console.log('Selected question:', randomQuestion); // Debug log
     setCurrentQuestion(randomQuestion);
     setCurrentStep('question');
     setIsModalOpen(true);
-    console.log('Modal should be open now'); // Debug log
   };
 
   const handleOptionSelect = (optionIndex: number) => {
@@ -69,7 +66,7 @@ export default function LoveNotes() {
     }
   };
 
-  const resetFlow = () => {
+  const closeModal = () => {
     setCurrentStep('question');
     setCurrentQuestion(null);
     setCurrentMessage("");
@@ -101,7 +98,7 @@ export default function LoveNotes() {
             {/* Backdrop */}
             <div 
               className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-              onClick={() => setIsModalOpen(false)}
+              onClick={closeModal}
             ></div>
             
             {/* Modal Content */}
@@ -110,8 +107,8 @@ export default function LoveNotes() {
               <div className="relative z-10">
                 {/* Close button */}
                 <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
                 >
                   ×
                 </button>
@@ -119,11 +116,6 @@ export default function LoveNotes() {
                 <h2 className="text-2xl font-bold gothic-text mb-6">
                   {currentStep === 'question' ? 'Tell me...' : 'A Love Note For You'}
                 </h2>
-
-                {/* Debug info */}
-                <div className="text-sm text-gray-500 mb-4">
-                  Debug: Step={currentStep}, HasQuestion={!!currentQuestion}, IsOpen={isModalOpen}
-                </div>
 
                 {currentStep === 'question' && currentQuestion ? (
                   <div>
@@ -145,23 +137,17 @@ export default function LoveNotes() {
                   </div>
                 ) : currentStep === 'message' ? (
                   <div>
-                    <div className="text-6xl mb-4">💌</div>
+                    <div className="text-6xl mb-6">💌</div>
                     <p className="text-lg text-gray-700 leading-relaxed gothic-text font-semibold mb-8">
                       {currentMessage}
                     </p>
-                    <div className="text-2xl mb-6">💕</div>
-                    <Button
-                      onClick={resetFlow}
-                      className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-                    >
-                      Get Another Message 💫
-                    </Button>
+                    <div className="text-4xl">💕</div>
                   </div>
                 ) : (
                   <div>
                     <div className="text-4xl mb-4">❌</div>
                     <p>Something went wrong. Let me fix this...</p>
-                    <Button onClick={() => setIsModalOpen(false)}>Close</Button>
+                    <Button onClick={closeModal}>Close</Button>
                   </div>
                 )}
               </div>
