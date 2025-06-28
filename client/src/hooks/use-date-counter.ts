@@ -6,10 +6,10 @@ export function useDateCounter() {
 
   useEffect(() => {
     const updateCounters = () => {
-      // Relationship start date - replace with actual date
-      const startDate = new Date('2024-03-15');
+      // Relationship start date - October 3rd, 2024
+      const startDate = new Date('2024-10-03');
       const now = new Date();
-      const oneYearDate = new Date('2025-03-15');
+      const oneYearDate = new Date('2025-10-03');
       
       const days = Math.floor((now.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
       const daysUntilAnniversary = Math.floor((oneYearDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));

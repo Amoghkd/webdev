@@ -42,8 +42,9 @@ export default function EasterEgg() {
             <DialogTitle className="text-2xl font-bold gradient-text mb-4">Secret Message! 🎉</DialogTitle>
           </DialogHeader>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            You found the hidden Hello Kitty! Just like how you found your way into my heart - 
-            unexpected, wonderful, and absolutely perfect. You're my favorite discovery! 💖
+            You found the hidden Hello Kitty! 9 months ago, you found your way into my heart - 
+            unexpected, wonderful, and absolutely perfect. Here's to many more months of love, 
+            laughter, and beautiful surprises together! 💖
           </p>
           <div className="text-4xl animate-bounce">✨ 💕 ✨</div>
         </DialogContent>
