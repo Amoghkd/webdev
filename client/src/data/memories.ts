@@ -33,7 +33,7 @@ export const memories: Memory[] = [
     title: "basement adventure 🌊",
     description: "our go to spot ,just us and the thrill of getting caught by someone but we do still have do whatever we want to . ",
     date: "anytime",
-    image: "https://webdev-6esb.onrender.com/client/public/basement.jpg"
+    image: "https://github.com/Amoghkd/webdev/blob/main/client/public/basement.jpg "
   },
  {
     id: 5,
