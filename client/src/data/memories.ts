@@ -12,7 +12,7 @@ export const memories: Memory[] = [
     title: "Our First Date 💕",
     description: "right then i knew this would go for long(oru naaya ennennekkumaayi) ,the feeling you'd understand me like no one else,u did and  that i could bully you ofc .i knew  i did the right thing taking you to that rooftop and asking you out .",
     date: "October 3, 2024",
-    image: "https://webdev-6esb.onrender.com/client/public/patti.jpg"
+    image: "/patti.jpg"
   },
   {
     id: 2,
